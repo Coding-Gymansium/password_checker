@@ -49,7 +49,15 @@ class PasswordCheckerTest < Minitest::Test
   end
 
   def test_return_valid_password_count
+    #skip
     assert_equal 21, @pc.count_valid
   end
+  
+  def test_change_string_into_an_array
+    assert_equal [4, 6, 'q' ], @pc.change_string("4-6 q")
+  end
 
+  def test_can_get_count
+    assert_equal 4, @pc.get_count("c", "aabbbcccc")
+  end
 end
